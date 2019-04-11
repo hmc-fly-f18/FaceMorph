@@ -314,8 +314,18 @@ def makeMorph(imageFileName1, imageFileName2):
 
         # Morph one triangle at a time.
         morphTriangle(img1, img2, imgMorph, t1, t2, t, alpha)
+    fileName = imageFileName1[:len(imageFileName1)-4] + imageFileName2[:len(imageFileName2)-4] + ".jpg"
+    returnValue = cv2.imwrite(fileName,np.uint8(imgMorph))
 
-    return np.uint8(imgMorph)
+    if (returnValue):
 
-    # cv2.imshow("Morphed Face", np.uint8(imgMorph))
-    # cv2.waitKey(0)
+        return fileName
+
+    else:
+
+        return "morphedimage.jpg"
+    
+    # return np.uint8(imgMorph)
+
+    # # cv2.imshow("Morphed Face", np.uint8(imgMorph))
+    # # cv2.waitKey(0)
