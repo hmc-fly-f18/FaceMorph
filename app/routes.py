@@ -2,7 +2,7 @@ from flask import render_template, redirect, url_for, request, send_from_directo
 from app import app
 import os
 from werkzeug import secure_filename
-from BackEnd import  faceMorph, features
+from app import faceMorph
 
 @app.route('/<filename>')
 def get_file(filename):
@@ -40,8 +40,10 @@ def upload_file():
             file1.save(save_to1)
             file2.save(save_to2)
             #need a if statement to coorperate with Morph botton(p.s need to get Morph botton work)
-            Morph_result= faceMorph.makeMorph(save_to1, save_to2)
-            return ('index.html#about', morph=Morph_result)
+            Morph_result= faceMorph.makeMorph(save_to1,save_to2)
+            
+            return render_template('index.html#about', morph= Morph_result)
+            
     return render_template('index.html#feature')
 
 # allowed image types
