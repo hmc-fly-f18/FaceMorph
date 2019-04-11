@@ -32,10 +32,14 @@ def upload_file():
             return redirect(request.url)
 
         #work on this to make it similar to our part
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            save_to=(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            file.save(save_to)
+        if file1 and allowed_file(file1.filename) and file2 and allowed_file(file2.filename) :
+            filename1 = secure_filename(file1.filename)
+            filename2 = secure_filename(file2.filename)
+            save_to1=(os.path.join(app.config['UPLOAD_FOLDER'], filename1))
+            save_to2=(os.path.join(app.config['UPLOAD_FOLDER'], filename2))
+            file1.save(save_to1)
+            file2.save(save_to2)
+            if 
             pred_class=predictor.model_predict(save_to, '/home/ubuntu/cs121/app')
             return render_template('displayResult.html', filename=filename, prediction=pred_class)
     return render_template('index.html')

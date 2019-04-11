@@ -98,54 +98,61 @@ http://www.tooplate.com/view/2083-steak-house
       <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
           <div class="wow fadeInUp section-title" data-wow-delay="0.6s">
             <h2>FaceMorph</h2>
-            <p>How strongly should each face appear?<p>
+            <p>How strongly should each face appear?</p>
             <div class="slidecontainer">
-  <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
-  <p>Left: <span id="left"></span> Right: <span id="right"></span></p>
-  <script>
-var slider = document.getElementById("myRange");
-var leftVal = document.getElementById("left");
-var rightVal = document.getElementById("right");
+              <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
+              <p>Left: <span id="left"></span> Right: <span id="right"></span></p>
+              <script>
+              var slider = document.getElementById("myRange");
+              var leftVal = document.getElementById("left");
+              var rightVal = document.getElementById("right");
 
-leftVal.innerHTML = slider.value;
-rightVal.innerHTML = 100-slider.value;
+              leftVal.innerHTML = slider.value;
+              rightVal.innerHTML = 100-slider.value;
 
-slider.oninput = function() {
-  leftVal.innerHTML = this.value;
-  rightVal.innerHTML = 100-this.value;
-}
-</script>
-</div>
+              slider.oninput = function() {
+                leftVal.innerHTML = this.value;
+                rightVal.innerHTML = 100-this.value;
+              }
+              </script>
+              <form method=post ></form>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="feature-thumb">
+                <div class="feature-icon">
+                    <span><img src="images/PLACEHOLDER" alt="image1"></span>
+                </div>
+                <h3>Choose an image!</h3>
+                <form method=post enctype=multipart/form-data>
+                  <input type=file name=file1>
+                  <input type="submit" value=Upload>
+                </form>
+                  <!-- <p><button type="button">Upload</button></p> -->
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+              <a href="#about" class="wow fadeInUp btn btn-default smoothScroll" data-wow-delay=".6s">Morph!</a>
+            </div>
+
+            <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
+              <div class="feature-thumb">
+                <div class="feature-icon">
+                  <span><img src="images/PLACEHOLDER" alt="image2"></span>
+                </div>
+                <h3>One more time!</h3>
+                <form method=post enctype=multipart/form-data>
+                  <input type=file name=file2>
+                  <input type="submit" value="Upload Another">
+                </form>
+                <!-- <p><button type="button">Upload another</button></p> -->
+              </div>
+            </div>
           </div>
       </div>
-
-      <div class="clearfix"></div>
-
-      <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-        <div class="feature-thumb">
-          <div class="feature-icon">
-             <span><img src="images/PLACEHOLDER" alt="image1"></span>
-          </div>
-          <h3>Choose an image!</h3>
-          <p><button type="button">Upload</button></p>
-        </div>
-      </div>
-
-      <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-        <a href="#about" class="wow fadeInUp btn btn-default smoothScroll" data-wow-delay=".6s">Morph!</a>
-        
-      </div>
-
-      <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
-        <div class="feature-thumb">
-          <div class="feature-icon">
-            <span><img src="images/PLACEHOLDER" alt="image2"></span>
-          </div>
-          <h3>One more time!</h3>
-          <p><button type="button">Upload another</button></p>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
