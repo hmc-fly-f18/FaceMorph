@@ -2,7 +2,7 @@ from flask import render_template, redirect, url_for, request, send_from_directo
 from app import app
 import os
 from werkzeug import secure_filename
-from app import predictor 
+from BackEnd import  faceMorph, features
 
 @app.route('/<filename>')
 def get_file(filename):
@@ -39,10 +39,11 @@ def upload_file():
             save_to2=(os.path.join(app.config['UPLOAD_FOLDER'], filename2))
             file1.save(save_to1)
             file2.save(save_to2)
-            if 
-            pred_class=predictor.model_predict(save_to, '/home/ubuntu/cs121/app')
-            return render_template('displayResult.html', filename=filename, prediction=pred_class)
-    return render_template('index.html')
+            #need a if statement to coorperate with Morph botton(p.s need to get Morph botton work)
+            Predictor_path = "somepath"
+            morph_result
+            return ('index.html#about', morph=Morph_result)
+    return render_template('index.html#feature')
 
 # allowed image types
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
