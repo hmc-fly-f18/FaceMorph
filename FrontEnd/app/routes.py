@@ -40,13 +40,12 @@ def upload_file():
             file1.save(save_to1)
             file2.save(save_to2)
             #need a if statement to coorperate with Morph botton(p.s need to get Morph botton work)
-            Predictor_path = "somepath"
-            morph_result
+            Morph_result= faceMorph.makeMorph(save_to1, save_to2)
             return ('index.html#about', morph=Morph_result)
     return render_template('index.html#feature')
 
 # allowed image types
-ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
+ALLOWED_EXTENSIONS = set(['jpg'])
 app.config['ALLOWED_EXTENSIONS']=ALLOWED_EXTENSIONS
 
 # is file allowed to be uploaded?
